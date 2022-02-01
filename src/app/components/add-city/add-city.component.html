@@ -1,0 +1,6 @@
+<div class="dark_blue_background_color padding-15">
+    <h2>Add city</h2>
+    <p>Search a city to see it's weather forecast.</p>
+    <input type="text" placeholder="Ex. Leiria, PT" #newCity [(ngModel)]="newCityName">
+    <button (click)="addCity(newCity.value)">Add city</button>
+</div>

@@ -1,0 +1,18 @@
+.placeholder.hide-ph {
+    display: none;
+}
+
+input {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 8px;
+    box-sizing: border-box;
+    color: #ec6745;
+    background-color: #ffffff;
+    border-color: #F3FBFF;
+}

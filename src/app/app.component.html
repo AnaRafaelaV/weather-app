@@ -1,0 +1,13 @@
+<!-- Toolbar -->
+<mat-toolbar class="dark_blue_background_color wa_flexbox__justify_content_center">
+    <img src="http://openweathermap.org/img/wn/10d.png" />
+    <p class=" toolbar-title ">Weather app</p>
+</mat-toolbar>
+
+<div class="content " role="main ">
+    <app-add-city (newItemEvent)="addCity($event)"> </app-add-city>
+    <app-weather [weather]="weather" [buttonClass]="hasDeleteOption "> </app-weather>
+    <div *ngFor="let cityWeather of addedCities">
+        <app-weather [weather]="cityWeather" buttonClass="showButton" textClass="location_info" (newItemEvent)="removeCity($event)"> </app-weather>
+    </div>
+</div>

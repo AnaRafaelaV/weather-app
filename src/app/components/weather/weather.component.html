@@ -1,0 +1,42 @@
+<div class="padding-15 dark_blue_background_color city_card">
+    <div class="wa_flexbox wa_flexbox__flex_direction_row wa_flexbox__justify_content_space_between">
+        <h2>{{weather.name}}, {{ weather.country }}</h2>
+        <button [class]="buttonClass" (click)="removeCity(weather)">Delete</button>
+    </div>
+    <p [class]="textClass">Your current location</p>
+    <div class="wa_flexbox wa_flexbox__flex_direction_row padding-15 ligth_blue_background_color weather_forecast_info">
+        <div class="wa_flexbox wa_flexbox__flex_direction_column default_background_color todays_weather_card wa_flexbox__align_items_center ">
+            <div class="wa_flexbox wa_flexbox__flex_direction_row wa_flexbox__align_items_center ">
+                <div class="wa_flexbox wa_flexbox__flex_direction_column wa_flexbox__align_items_center ">
+                    <span>Today</span>
+                    <span>{{ weather.date }}</span>
+                    <span>Sunrise {{  weather.sunrise }} </span>
+                    <span>Sunset {{  weather.sunset }}</span>
+                </div>
+            </div>
+            <img [src]="weather.icon " [title]="weather.imgTitle " />
+            <span> {{ weather.temp | number: '1.0-0' }}ºC </span>
+            <span>{{ weather.description | titlecase }}. Feels like {{ weather.feels_like | number: '1.0-0' }}ºC.</span>
+
+            <div class="padding-5 wa_flexbox wa_flexbox__flex_direction_row wa_flexbox__flex_gap_3 ">
+                <div class="wa_flexbox wa_flexbox__flex_direction_column wa_flexbox__align_items_center ">
+                    <span>Max</span>
+                    <span>{{ weather.temp_max | number: '1.0-0' }}ºC</span>
+                </div>
+                <div class="wa_flexbox wa_flexbox__flex_direction_column wa_flexbox__align_items_center ">
+                    <span>Min</span>
+                    <span>{{ weather.temp_min | number: '1.0-0' }}ºC</span>
+                </div>
+                <div class="wa_flexbox wa_flexbox__flex_direction_column wa_flexbox__align_items_center ">
+                    <span>Humidity</span>
+                    <span>{{ weather.humidity }}%</span>
+                </div>
+            </div>
+        </div>
+        <div class="ligth_blue_background_color wa_flexbox__flex_1 wa_flexbox wa_flexbox__flex_direction_row wa_flexbox__flex_gap_2 forecast_div ">
+            <div *ngFor="let f of weather.forecast " class="wa_flexbox__flex_1 default_background_color wa_flexbox wa_flexbox__flex_direction_column forecast_card ">
+                <app-forecast [weather]="f"></app-forecast>
+            </div>
+        </div>
+    </div>
+</div>
