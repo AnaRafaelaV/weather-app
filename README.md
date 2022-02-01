@@ -2,8 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
-## OpenWeather API key
-Before trying to run this project add your OpenWeather API key on both files in the enviorement folder where you can find an empty string with the comment //.
+## Weather API key
+Before trying to run this project add your Weather API key on both files in the enviorement folder where you can find now an empty string followed with the comment `//open weather api key`. To get one key you should create an account on [Weather API](https://openweathermap.org/api)
 
 ## Development server
 
